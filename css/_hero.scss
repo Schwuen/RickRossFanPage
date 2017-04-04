@@ -1,0 +1,19 @@
+.hero {
+	
+	height: 150px;
+	width: 100%;
+	float: left;
+	margin-top: $height-header;
+	
+	@extend .covered-background-image;
+	background-attachment: scroll;
+	background-image: url(../img/giphy.gif);
+	
+	&__title {
+		color: $color-light;
+		text-align: center;
+		text-shadow: 2px 2px $color-text-darker;
+		margin-top: $height-header/2-51px;
+	}
+	
+}

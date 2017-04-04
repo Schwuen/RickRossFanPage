@@ -1,0 +1,22 @@
+.nicknames {
+	text-align: center;
+	margin-top: 10%;
+	
+	float: left;
+	clear: both;
+	width: 100%;
+	
+	&__title {
+		font-size: 24px;
+		margin-bottom: 24px*1.2;
+	}
+	
+	&__list {
+		list-style-type: none;
+	}
+	
+	&__item {
+		font-size: 16px;
+		line-height: 16px*1.5;
+	}
+}

@@ -1,0 +1,29 @@
+.header {
+    position: fixed;
+    width: 100%;
+	z-index: 10;
+    height: $height-header;
+	
+	background: $color-light;
+    box-shadow: 0px 4px 12px 4px rgba(0,0,0,0.75);
+
+
+    &__logo {
+        float: left;
+        margin-left: 12.5%;
+        margin-top: $height-header/2-51px;
+        width: 75px;
+    }
+
+    &__title {
+        float: left;
+        margin-left: 5%;
+		margin-top: $height-header/2-51px;
+		margin-bottom: 0;
+    }
+
+    &__sub-title {
+        float: left;
+        margin-left: 5%;
+    }
+}

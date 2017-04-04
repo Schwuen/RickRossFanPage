@@ -1,0 +1,15 @@
+.row {
+	@include outer-container();
+
+	@include media($s-contained) {
+		padding: 0px $s-spacing;
+	}
+
+	@include media($m-contained) {
+		padding: 0px $m-spacing;
+	}
+
+	@include media($l) {
+		padding: 0px $l-spacing;
+	}
+}

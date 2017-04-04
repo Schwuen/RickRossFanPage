@@ -1,0 +1,42 @@
+.music-change {
+	
+	&__trigger {
+		text-align: center;
+	}
+	
+	&__wrap {
+		cursor: url(../img/cursor.png), auto;
+		margin-bottom: 10%;
+	}
+	
+	&__img-wrap {
+		position: relative;
+		
+		background: $color-text-darker;
+		
+		&:hover .music-change__info {
+			display: block;
+		}
+		&:hover .music-change__img {
+			opacity: .5;
+		}
+	}
+	
+	&__img {
+		width: 100%;
+		
+		transition: opacity .2s;
+	}
+	
+	&__info {
+		position: absolute;
+		display: none;
+		
+		top: 50%;
+		left: 40%;
+		
+		color: $color-light;
+		
+		transition: display .2s;
+	}
+}

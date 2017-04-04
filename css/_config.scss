@@ -1,0 +1,57 @@
+// Columns.
+$s-columns: 						4;
+$m-columns: 						12;
+$l-columns: 						12;
+
+// Breakpoint sizes.
+$m-breakpoint: 						768px;
+$l-breakpoint: 						1025px;
+
+// Grid.
+$column: 							60px;
+$gutter: 							40px;
+$grid-columns: 						$s-columns;
+$max-width: 						100%;
+$visual-grid: 						false;
+$visual-grid-color:					blue;
+$visual-grid-index:					front;
+
+// Spacing.
+$s-spacing: 					   30px;
+$m-spacing: 					  50px;
+$l-spacing: 						50px;
+
+// Sizes.
+$height-header:                 150px;
+
+// Breakpoints.
+$s-contained:						new-breakpoint(max-width ($m-breakpoint - 1) $s-columns);
+$m: 								new-breakpoint(min-width $m-breakpoint $m-columns);
+$m-contained:                       new-breakpoint(min-width $m-breakpoint max-width ($l-breakpoint - 1) $m-columns);
+$l: 								new-breakpoint(min-width $l-breakpoint $l-columns);
+
+// Fonts.
+@import url(https://fonts.googleapis.com/css?family=Sansita:400,400i,700,700i,800,800i,900,900i);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+$font-title: "Sansita";
+$font-text: "Open Sans";
+
+// Colors.
+$white:                             rgb(255, 255, 255);
+$grey-10:                           rgb(197, 197, 197);
+$grey-20:                           rgb(73, 76, 80);
+$brown:                            rgb(139, 114, 94);
+$black:                             rgb(0, 0, 0);
+
+// Descriptive colors.
+$color-light:                       $white;
+$color-text-default:                $grey-20;
+$color-text-lighter:                $grey-10;
+$color-text-darker:                 $black;
+$color-overlay:                     rgba($black, .7);
+$color-action:                      $brown;
+
+// Other.
+$transition-duration-default:       .2s;
+$amount-navigation-list-items:     5;

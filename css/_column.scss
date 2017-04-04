@@ -1,0 +1,58 @@
+.column {
+	@include media($s-contained) {
+		@include span-columns(4);
+	}
+
+	&--one-third {
+		@include media($m) {
+			@include span-columns(4);
+		}
+	}
+
+	&--three-quarter {
+		@include media($m) {
+			@include span-columns(9);
+		}
+	}
+
+	&--whole {
+		@include media($m) {
+			@include span-columns(12);
+		}
+	}
+
+	&--whole-shift-two {
+		@include media($m) {
+			@include span-columns(8);
+			@include shift(2);
+		}
+	}
+
+	&--omega {
+		@include omega();
+	}
+
+	&--margin-top {
+		margin-top: $s-spacing;
+
+		@include media($m) {
+			margin-top: $m-spacing;
+		}
+
+		@include media($l) {
+			margin-top: $l-spacing;
+		}
+	}
+
+	&--margin-bottom {
+		margin-bottom: $s-spacing;
+
+		@include media($m) {
+			margin-bottom: $m-spacing;
+		}
+
+		@include media($l) {
+			margin-bottom: $l-spacing;
+		}
+	}
+}
