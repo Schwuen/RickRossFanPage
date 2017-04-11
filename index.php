@@ -13,7 +13,7 @@ $ok = $statement->execute();
 
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-function addComment($pdo, $name, $comment, $email) {    
+function addComment($pdo, $name, $comment, $email) {
     $query = 'INSERT INTO comments (name, comment, email) VALUES (:name, :comment, :email)';
     $statement = $pdo->prepare($query);
     $statement->bindValue(':name', $name, PDO::PARAM_STR);

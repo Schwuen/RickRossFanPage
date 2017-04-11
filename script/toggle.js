@@ -1,9 +1,7 @@
 var bioTrigger = document.getElementById("bioTrigger");
 var musicTrigger = document.getElementById("musicTrigger");
-var galleryTrigger = document.getElementById("galleryTrigger");
 var bioDiv = document.getElementById("bio");
 var musicDiv = document.getElementById("musicDiv");
-var galleryDiv = document.getElementById("galleryDiv");
 var music = document.getElementById("music");
 var pause = document.getElementById("pause");
 var devil = document.getElementById("devil");
@@ -16,7 +14,6 @@ var hold = document.getElementById("hold");
 
 expand(bioTrigger, bioDiv);
 expand(musicTrigger, musicDiv);
-expand(galleryTrigger, galleryDiv);
 change(devil, music, "img/devil.mp3");
 change(iThink, music, "img/RickRoss.mp3");
 change(hustlin, music, "img/RickRoss-Hustlin.mp3");
