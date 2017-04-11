@@ -1,0 +1,49 @@
+.footer {
+    width: 100%;
+    height: 250px;
+    
+    display: block;
+    
+    background: #222;
+    
+    text-align: center;
+    
+    &__copyright-text {
+        color: grey;
+        padding-top: 50px;
+    }
+
+    
+    &__navigation {
+        display: inline-block;
+        
+        &-item {
+            list-style-type: none;
+            width: auto;
+            color: $color-light;
+        }
+        
+        &-header {
+            font-family: $font-title;
+            font-size: 32px;
+            color: $color-light;
+            
+            padding: 20px 0px 20px 0px;
+        }
+        
+        &-link {
+            display: inline-block;
+            color: lightgrey;
+            text-decoration: none;
+            margin-right: 0px; 
+            width: auto;
+            
+            &:hover {
+                color: #8b725e;
+                width: auto;
+                margin-right: 9px;
+                transition: .4s ease-in-out;
+            }
+        }
+    }
+}

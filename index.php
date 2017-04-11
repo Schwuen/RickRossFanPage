@@ -1,3 +1,33 @@
+<?php
+
+$dsn = 'mysql:host=127.0.0.1;dbname=rickrossfanpage';
+$username = 'Toxyc';
+$password = 'Beowulf123';
+$pdo = new PDO($dsn, $username, $password);
+
+$query = "SELECT * FROM comments";
+
+$statement = $pdo->prepare($query);
+
+$ok = $statement->execute();
+
+$results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+function addComment($pdo, $name, $comment, $email) {    
+    $query = 'INSERT INTO comments (name, comment, email) VALUES (:name, :comment, :email)';
+    $statement = $pdo->prepare($query);
+    $statement->bindValue(':name', $name, PDO::PARAM_STR);
+    $statement->bindValue(':comment', $comment, PDO::PARAM_STR);
+    $statement->bindValue(':email', $email, PDO::PARAM_STR);
+    $ok = $statement->execute();
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    addComment($pdo, $_POST['name'], $_POST['comment'], $_POST['email']);
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -198,20 +228,43 @@
 		</div>
 	</section>
 	
-	<section class="row gallery">
-		<a href="#" class="column column--whole gallery__trigger trigger title" id="galleryTrigger">
-			<h1 class="gallerry__title">
-				Gallery
-			</h1>
-		</a>
-		<div class="toggle" id="galleryDiv">
-			<div class="column column--whole gallery__wrap">
-				<img class="gallery__img" src="">
-				<p class="gallery__next">Next</p>
-				<p class="gallery__previous">Previous</p>
-			</div>
-		</div>
+	<section class="row comment">
+           <h1 class="title">Comments</h1>
+       <?php
+        
+            foreach ($results as $row) {
+                echo "<i>Posted by: ".$row['name']. "</i><br>";
+                echo "<b>".$row['comment']."</b>";
+                echo "<br>";
+            } 
+        
+        ?>
+           <h3 class="title">Leave a comment</h3>
+            <form class="comment__form" method="post" action="index.php">
+               <label>Email</label>
+                <input type="email" name="email" placeholder="example@123.com"><br>               
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Jane Doe"><br><br>
+                <textarea style="width:220px; height:200px;" width="250px" height="300px" name="comment" maxlength="500"></textarea><br><br>
+                <input type="submit" class="submit-button" value="Send Nudes"><br>
+            </form>
 	</section>
+	
+	<footer class="footer">
+	    <nav class="footer__navigation">
+	        <ul class="footer__navigation-list">
+            <h3 class="footer__navigation-header">Contact</h3>
+	            <li class="footer__navigation-item">M: <a class="footer__navigation-link" href="mailto:rhmdekort@noorderpoort.nl">rick@ross.com</a></li>
+	            <li class="footer__navigation-item">T: <a class="footer__navigation-link" href="tel:+31624248321">+31 6 2424 8321</a></li>
+	        </ul>
+	    </nav>
+	    <br>
+	    <br>
+	    <br>
+	    <br>
+	    <br>
+        <span class="footer__copyright-text">Made by &copy; <span style="color:firebrick;">Sven Wiersema</span> and <span style="color:firebrick;">Thijs de Jonge</span></span>
+	</footer>
 	
 	<audio class="music" id="music" loop>
 	<script type="text/javascript" src="script/toggle.js"></script>

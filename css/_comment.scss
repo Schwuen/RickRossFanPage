@@ -1,0 +1,25 @@
+.comment {
+    width: 100%;
+    height: auto;
+    
+    margin-bottom: 100px;
+    text-align: center;
+    
+    color: $black;
+
+    
+    .title {
+        text-align: center;
+    }
+    
+    .submit-button {
+        color: $color-light;
+        background: $black;
+        border: 1px solid $color-light;
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 120px;
+        letter-spacing: 1px;
+        height: 40px;
+    }
+}

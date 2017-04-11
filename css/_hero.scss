@@ -4,6 +4,10 @@
 	width: 100%;
 	float: left;
 	margin-top: $height-header;
+    
+    @include media($m) {
+        height: 300px;
+    }
 	
 	@extend .covered-background-image;
 	background-attachment: scroll;
@@ -14,6 +18,10 @@
 		text-align: center;
 		text-shadow: 2px 2px $color-text-darker;
 		margin-top: $height-header/2-51px;
+        
+        @include media($m) {
+            margin-top: 300/2-20px;
+        }
 	}
 	
 }
